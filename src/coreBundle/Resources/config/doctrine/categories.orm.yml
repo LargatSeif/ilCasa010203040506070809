@@ -1,0 +1,16 @@
+coreBundle\Entity\categories:
+    type: entity
+    table: null
+    repositoryClass: coreBundle\Repository\categoriesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '30'
+            unique: true
+    lifecycleCallbacks: {  }

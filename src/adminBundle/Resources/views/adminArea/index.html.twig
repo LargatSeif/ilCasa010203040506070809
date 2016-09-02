@@ -1,0 +1,84 @@
+{% extends 'admin/adminBase.html.twig' %}
+
+{% block page_title %}Tableau de bord {% endblock page_title %}
+{% block optional_title %}v 1.0{% endblock optional_title %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">CPU Traffic</span>
+                    <span class="info-box-number">90<small>%</small></span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Likes</span>
+                    <span class="info-box-number">41,410</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Sales</span>
+                    <span class="info-box-number">760</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">New Members</span>
+                    <span class="info-box-number">2,000</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Donut Chart</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <canvas id="pieChart" style="height: 255px; width: 510px;" height="255" width="510"></canvas>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

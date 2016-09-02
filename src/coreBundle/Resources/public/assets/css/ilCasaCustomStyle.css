@@ -1,0 +1,145 @@
+ #myTitle{
+              color: White; 
+              
+              margin: 10px 0 0 10px;
+              white-space: nowrap;
+              overflow: hidden;
+              width: 15em;
+              animation: type 4s steps(300, end); 
+            }
+
+        
+            #Curs{
+              animation: blink 0.8s infinite;
+            }
+
+            @keyframes type{ 
+              from { width: 0; } 
+            } 
+
+            @keyframes type2{
+              0%{width: 0;}
+              50%{width: 0;}
+              100%{ width: 100; } 
+            } 
+
+            @keyframes blink{
+              to{opacity: .0;}
+            }
+
+            ::selection{
+              background: black;
+            }
+            
+            #myNav >li>a {
+                transition: color .3s;
+                
+                font-family: "Open Sans" ,sans-serif;
+                color:#6b7781;
+                height:43px;
+                line-height:43px;
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                
+            }
+            #myNav >li> a:hover{
+                color: #FFF ;
+            }
+            .myNav{
+                background-color:#f7f7f7;
+                width:100%;
+                margin-top:-7px;
+                padding-left:5%;                
+            }
+            .hovered{
+                
+                background-color:#DFDFDF;
+                color: #FFF;
+            }
+             
+            #first{
+                height:40px;
+                line-height:2.8;
+                margin-right: 5%;
+            }
+            .subHM0{
+                margin-bottom:-5px;
+                padding:0 40px 0 40px
+            }
+            #myTitle{
+                margin-top:10%;
+                font-weight:400;
+            }
+            .nav3{
+                background:#FFFFFF;
+                height:64px;
+                line-height:64px;
+                font-size:18px;
+            }
+            .hoverMenu{
+                display:none;
+                background-color:rgba(255,255,255,0.8);
+                color:black;
+                /*opacity: 0.8*/;
+                position:absolute;
+                z-index:2500;
+                width:88.4%;
+                margin-left: 5%;
+                height:auto;
+                
+                margin-top:35.5px;
+            }
+            .myHcard{
+                padding:5px 5px 5px 5px ;
+                background:transparent;
+                box-shadow:none;
+                 
+            }
+            .overlay{
+                position:absolute;
+                background:rgba(0,0,0,0.6);
+                height:150px;
+                top:0px;
+                width:100%;
+                display:none;
+            }
+/* categories */
+.categories{
+    background:transparent;
+    border: 1px solid #FFF;
+    border-radius:30px;
+    padding: 10px 20px 10px 20px;
+    line-height:60px;
+    font-size:14px;
+    color:#FFF;
+    font-weight:800;
+    margin-right:2%;
+}
+.categories:hover{
+    background-color: #FFFFFF;
+    color:#6b7781;
+}
+body{
+    background-color: #FAFAFA
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

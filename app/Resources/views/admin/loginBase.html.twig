@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ilCasa - Administration</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="{{ asset('adminLTE/bootstrap/css/bootstrap.min.css') }}"  media="screen,projection"/>
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="{{ asset('adminLTE/font-awesome.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ asset('adminLTE/ionicons.min.css') }}">
+    {#<link rel="stylesheet" href="{{ asset('adminLTE/dist/fontawesome/font-awesome.min.css') }}"  media="screen,projection"/>#}
+    {#<link rel="stylesheet" href="{{ asset('adminLTE/fontawesome/ionicons.min.css') }}"  media="screen,projection"/>#}
+    <link rel="stylesheet" href="{{ asset('adminLTE/dist/css/AdminLTE.min.css') }}"  media="screen,projection"/>
+    <link rel="stylesheet" href="{{ asset('adminLTE/plugins/iCheck/square/blue.css') }}"  media="screen,projection"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9] -->
+    <script src="{{ asset('adminLTE/plugins/html5shiv/html5shiv.min.js') }}"></script>
+    <script src="{{ asset('adminLTE/plugins/respond/respond.min.js') }}"></script>
+    <!--[endif]-->
+    <style>
+        .custom{
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            display: block;
+            width: 140%;
+            height: 140%;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            opacity: 0;
+            background: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body class="hold-transition login-page">
+{% block content %}
+
+{% endblock content %}
+<script src="{{ asset('adminLTE/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+<script src="{{ asset('adminLTE/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('adminLTE/plugins/iCheck/icheck.min.js') }}"></script>
+</body>
+</html>

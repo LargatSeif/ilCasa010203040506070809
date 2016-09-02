@@ -1,0 +1,10 @@
+admin_homepage:
+    path:     /
+    defaults: { _controller: adminBundle:Default:index }
+#admin_login_check:
+ #   path:     /login
+  #  defaults: { _controller: adminBundle:Default:login }
+   # methods:  POST
+admin_area:
+    path:     /welcome
+    defaults: { _controller: adminBundle:adminArea:index }

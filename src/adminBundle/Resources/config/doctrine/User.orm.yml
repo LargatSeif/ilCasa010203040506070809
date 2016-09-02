@@ -1,0 +1,11 @@
+adminBundle\Entity\User:
+    type: entity
+    table: User
+    repositoryClass: adminBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

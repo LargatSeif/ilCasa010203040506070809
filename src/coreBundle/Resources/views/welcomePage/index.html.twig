@@ -1,0 +1,348 @@
+{% extends '::base.html.twig' %}
+    {%  block navbar %}
+        <div class="navbar-fixed white">
+            <nav role="navigation" class="white">
+                <div class="nav-wrapper container">
+                    <a id="logo-container" href="#" class="brand-logo" style="margin-left:10px;">
+                        <img class="img-responsive" src="{{ asset('bundles/core/assets/img/ilCasa_Logo.png') }}" height="45px" style="margin-top:8px">
+                    </a>
+                    <ul class="center hide-on-med-and-down">
+                        <li style="margin-left:25%;width:50%;display:none;" id="searchBar">
+                                <label for="search" class="left "><i class="material-icons teal-text">search</i></label>
+                                <input id="search" type="text" name="Query"class="teal-text" 
+                                       placeholder="Trouvez une prestation ..." 
+                                       style="font-size: 14px;width:90%;text-align:center;">
+                        </li>
+                    </ul>
+                    <ul class="right hide-on-med-and-down" >
+                        <li>
+                            <a href="#" class="tooltipped" data-position="left" data-delay="50" data-tooltip="Inscrivez-vous !">
+                                <i class="material-icons teal-text accent-3 valign-wrapper" style="font-size:24px;"  >account_circle</i>
+                            </a></li>
+                        <li>
+                            <a href="#modal1" class="modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Contactez-nous!">
+                                <i class="material-icons teal-text accent-3" style="font-size:24px;" >email</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Besoin d'aide ?">
+                                <i class="material-icons teal-text accent-3" style="font-size:24px;" >info_outline</i>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="side-nav">
+                        <li>
+                            <a href="#">Navbar Link</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="nav-wrapper container-fluid" style="">
+                    <ul class="right hide-on-med-and-down" id="myNav" style="background-color:#f7f7f7;width:100%;margin-top:-7px;padding-left:5%;" >
+                        {% for item in data %}
+                            <li>
+                                <a href="#"  id="{{ item.id -1 }}">{{ item.nom }}</a>
+                            </li>
+                        {% endfor %}
+{#
+                        <li>
+                            <a href="#"  id="1">Aménagement intérieur</a>
+                        </li>
+                        <li>
+                            <a href="#"  id="2">Plomberie & chauffage</a>
+                        </li>
+                        <li>
+                            <a href="#"  id="3">Électricité & Domotique</a>
+                        </li>
+                        <li>
+                            <a href="#"  id="4">Nettoyage Pro</a>
+                        </li>
+                        <li>
+                            <a href="#"  id="5">Jardin & Extérieur</a>
+                        </li>
+                        <li>
+                            <a href="#"  id="6">Toute la maison</a>
+                        </li>#}
+                    </ul>
+                    
+                    <div id="hoverMenu0" class="hoverMenu " >
+                        <div class="">
+                            <div class="row " style="margin-bottom:-5px;padding:0 40px 0 40px">
+                                
+                                <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
+                                    
+                                    <div class="card horizontal myHcard" style="">
+                                        
+                                          <div class="card-image">
+                                               <a href="#0" style="">
+                                                    <img src="{{ asset('materialize/assets/img/background2.jpg')}}" class="img" id="0" height="150" style="border-radius:0px;">
+                                                    <div id="0" class="overlay">
+                                                        
+                                                        <i class="material-icons center" 
+                                                           style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
+                                                        <p style="text-align:center;font-size:24px;">Peinture interieur</p>
+                                                    </div>
+                                             </a> 
+                                          </div>
+                                          
+                                    </div>
+                                </div>
+                                
+                                <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
+                                   
+                                        <div class="card horizontal myHcard" style="">
+                                           
+                                          <div class="card-image">
+                                               <a href="#0" >
+                                                    <img src="" class="img" id="1" height="150" style="border-radius:0px;">
+                                                   <div id="1" class="overlay">
+                                                        
+                                                        <i class="material-icons center" 
+                                                           style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
+                                                        <p style="text-align:center;font-size:24px;">Peinture exterieur</p>
+                                                    </div>
+                                             </a> 
+                                          </div>
+                                           
+                                        </div>
+                                    
+                                </div>
+                                
+                                <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
+                                   
+                                        <div class="card horizontal myHcard" style="">
+                                           
+                                          <div class="card-image">
+                                               <a href="#0" >
+                                                    <img src="{{ asset('materialize/assets/img/background2.jpg')}}" id="2" class="img" height="150" style="border-radius:0px;">
+                                                   <div id="2" class="overlay">
+                                                        
+                                                        <i class="material-icons center" 
+                                                           style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
+                                                        <p style="text-align:center;font-size:24px;">Peinture bois</p>
+                                                    </div>
+                                             </a> 
+                                          </div>
+                                           
+                                        </div>
+                                    
+                                </div>
+                                
+                                <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
+                                   
+                                        <div class="card horizontal myHcard" style="">
+                                           
+                                          <div class="card-image">
+                                               <a href="#0" >
+                                                    <img src="{{ asset('materialize/assets/img/background2.jpg')}}" id="3" class="img" height="150" style="border-radius:0px;">
+                                                   <div id="3" class="overlay" style=" ">
+                                                        
+                                                        <i class="material-icons center" 
+                                                           style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
+                                                        <p style="text-align:center;font-size:24px;">Peinture metal</p>
+                                                    </div>
+                                             </a> 
+                                          </div>
+                                           
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                         
+                    </div>
+                    
+                    <div id="hoverMenu1" class="hoverMenu">
+                         <h2>1</h2>
+                    </div>
+                    
+                    <div id="hoverMenu2" class="hoverMenu">
+                         <h2>2</h2>
+                    </div>
+                    
+                    <div id="hoverMenu3" class="hoverMenu">
+                         <h2>3</h2>
+                    </div>
+                    
+                    <div id="hoverMenu4" class="hoverMenu">
+                         <h2>4</h2>
+                    </div>
+                    
+                    <div id="hoverMenu5" class="hoverMenu">
+                         <h2>5</h2>
+                    </div>
+                    
+                    <div id="hoverMenu6" class="hoverMenu">
+                         <h2>6</h2>
+                    </div>
+                    
+                    
+                </div>
+            </nav>
+            
+        </div>
+    {% endblock navbar %}
+
+    {% block content %}
+
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                
+                <div class="container">
+                     
+                    <h1 id="myTitle" class="header white-text center-align hide-on-small-only hide-on-med-only " style="margin-top:10%;font-weight:800;">
+                        Vos travaux en toute simplicité.<span id="Curs">|</span>
+                    </h1>
+                    <h4  class="header white-text waves-effects center-align hide-on-large-only text-wrap" style="margin-top:10%">
+                        Vos travaux en toute simplicité.<span id="Curs">|</span>
+                    </h4>
+                    <h6 class="center-align ">Chercher ,Comparer & profitez-en !</h4><br>
+                     
+                    <div class="row" style="margin-top:15%;">
+                        <div class="input-field container">
+                            <form action="" method="get" >
+                                  
+                                    <input  focused id="autocomplete-input" class="autocomplete  align-left" type="text" name="Query"
+                                           class=" " name="Q"
+                                           placeholder="Trouvez une prestation ..." 
+                                           style="font-size: 16px;font-weight:100;width:100%;text-align:center;color:#555;height:60px;border-radius:3px;background-color:#FFF"
+                                           >
+                               
+                            </form>
+                        </div> 
+                        
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="parallax">
+                <img src="{{ asset('bundles/core/assets/img/intro-background.jpg')}}" alt="Unsplashed background img 2">
+            #}</div>
+        </div>
+        <!-- ***************************************************** -->
+        <div class="container">
+            <div class="section">
+                <!--   Icon Section   -->
+                <div class="row">
+                    <h4 class="center"><small>Pourquoi</small> "ilCasa.tn" ?</h4>
+                    <hr>
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center" style="color:#DE4644;font-size:9.5em;"><i class="material-icons">flash_on</i></h2>
+                            <h5 class="center">Efficacité !</h5>
+                            <p class="center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Calque_1" x="0px" y="0px" viewBox="-280 -100 1200 769" style="enable-background:new 0 0 1000 641.4;" xml:space="preserve">
+                                <style type="text/css">
+                                    .st0{fill:#EBCE43;}
+                                    .st1{fill:#C6AB3B;}
+                                </style>
+                                <g id="Calque_6">
+                                    <path class="st0" d="M588,289.5c0,10.1-0.6,20.2-1.7,30c-0.5,4.5-1.1,9-1.9,13.4H65.6c-0.8-4.5-1.4-8.9-1.9-13.4   c-1.1-9.9-1.7-19.9-1.7-30c0-96.6,52-181,129.6-226.7l3.3,10.7c16.9-9.3,35.1-16.7,54.1-22.2c7.1-2,14.2-3.8,21.6-5.2v-14   c3.1-0.7,6.4-1.3,9.6-1.8c1.3-0.3,2.6-0.4,3.8-0.6c13.4-2.1,27.1-3.1,41-3.1c15.3,0,30.3,1.3,44.9,3.8c1.3,0.3,2.6,0.4,3.8,0.7   c1.9,0.3,3.8,0.8,5.8,1.1v15.5c7.3,1.5,14.5,3.2,21.6,5.2c19,5.5,37.2,12.9,54.1,22.2c0.1,0,0.1,0.1,0.2,0.1l3.7-12   C536.3,109,588,193.2,588,289.5z"/>
+                                    <path class="st0" d="M608.7,328.9L608.7,328.9H41.3l0,0c0,34.4,27.9,62.3,62,62H546C580.9,391.2,608.7,363.3,608.7,328.9z"/>
+                                    <rect x="270.5" y="26.5" class="st0" width="109" height="293.1"/>
+                                    <path class="st1" d="M270.5,46.1v273.4L194.7,73.6c0.1,0,0.1-0.1,0.2-0.1c16.9-9.3,35.1-16.7,54.1-22.2   C256,49.4,263.2,47.6,270.5,46.1z"/>
+                                    <path class="st1" d="M455.4,75.1l-75.9,245.9V47.7c7.3,1.5,14.5,3.2,21.6,5.2c19,5.5,37.2,12.9,54.1,22.2   C455.3,75,455.3,75.1,455.4,75.1L455.4,75.1z"/>
+                                    <path class="st1" d="M455.4,75.1l-75.9,246V47.7c7.3,1.5,14.5,3.2,21.6,5.2c19,5.5,37.2,12.9,54.1,22.2   C455.3,75,455.3,75.1,455.4,75.1z"/>
+                                </g>
+                                </svg>
+                            </h2>
+                            <h5 class="center">Polyvalence !</h5>
+                            <p class="center">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h1 class="center" style="color:#945BA2;font-size:9.5em;" ><i class="material-icons">settings</i></h1>
+                            <h5 class="center">Ergonomique et simple</h5>
+                            <p class="center">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class="row center">
+                        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax">
+                <img src="{{ asset('materialize/assets/img/background2.jpg')}}" alt="Unsplashed background img 2">
+            </div>
+        </div>
+        <!-- ***************************************************** -->
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col s12 center">
+                        <h3><i class="mdi-content-send brown-text"></i></h3>
+                        <h4>Contact Us</h4>
+                        <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class="row center">
+                        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax">
+                <img src="{{ asset('materialize/assets/img/background3.jpg')}}" alt="Unsplashed background img 3">
+            </div>
+        </div>
+    {% endblock content %}
+    {% block modals %}
+        <div id="modal1" class="modal " style="height: %;">
+            <div class="modal-content" >
+              <h4>Contactez-nous !</h4>
+
+                <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="first_name" type="text" class="validate">
+                      <label for="first_name">Nom</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="last_name" type="text" class="validate">
+                      <label for="last_name">Prènom</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" class="validate">
+                      <label for="email">Adresse E-mail</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s12">
+
+                      <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                      <label for="icon_prefix2">Message</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer container">
+              <button class="btn modal-action modal-close waves-effect waves-green right ">
+                  <i class="material-icons right">send</i>Envoyer
+                </a>
+            </div>
+        </div>
+    {% endblock modals %}
