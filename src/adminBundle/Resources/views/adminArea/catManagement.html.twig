@@ -1,5 +1,7 @@
 {% extends 'admin/adminBase.html.twig' %}
-
+{% block treeview1 %}active{% endblock treeview1 %}
+{% block treeview2 %}active menu-open{% endblock treeview2 %}
+{% block tv_active1 %}active{% endblock tv_active1 %}
 {% block page_title %}Tableau de bord {% endblock page_title %}
 {% block optional_title %}v 1.0{% endblock optional_title %}
 {% block content %}
@@ -62,7 +64,47 @@
         <!-- /.col -->
     </div>
     <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Responsive Hover Table</h3>
 
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Date d'ajout</th>
+                            <th>Status</th>
+                            <th>nbr Sous.Cat</th>
+                        </tr>
+                        {% for item in data %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.nom }}</td>
+                            <td>11-7-2014</td>
+                            <td><span class="label label-success">Approved</span></td>
+                            <td>2</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
 
     </div>
 {% endblock content %}

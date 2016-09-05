@@ -216,7 +216,7 @@
                 <div class="pull-left info">
                     <p>{{ app.user.username }}</p>
                     <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    <a href="#"><i class="fa fa-circle text-success"></i> En ligne</a>
                 </div>
             </div>
 
@@ -231,24 +231,25 @@
                 </div>
             </form>
             <!-- /.search form -->
-
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-                <li class="header">HEADER</li>
+                <li class="header">Menu</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                <li><a href="#"><i class="fa fa-dashboard"></i> <span>Accueil</span></a></li>
+                <li class="treeview {% block treeview1 %}{% endblock treeview1 %}">
+                    <a href="#"><i class="fa fa-cog"></i> <span>Edition des catégories</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-chevron-down pull-right"></i>
+                        </span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Link in level 2</a></li>
+                    <ul class="treeview-menu {% block treeview2 %}{% endblock treeview2 %}" id="catMenu" >
+                        <li class="container {% block tv_active1 %}{% endblock tv_active1 %}"><a href="{{path('cat_Manager') }}"><i class="fa fa-gears"></i>Gérer les Cats.</a></li>
+                        <li class="container {% block tv_active2 %}{% endblock tv_active2 %}"><a href="{{path('cat_add') }}"><i class="fa fa-plus"></i>Ajout</a></li>
+                        <li class="container {% block tv_active3 %}{% endblock tv_active3 %}"><a href="#"><i class="fa fa-edit"></i>Modification</a></li>
+                        <li class="container {% block tv_active4 %}{% endblock tv_active4 %}"><a href="#"><i class="fa fa-trash"></i>Suppression</a></li>
                     </ul>
                 </li>
+                <li class="active"><a href="#"><i class="fa fa-area-chart"></i>Statistiques<span></span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>

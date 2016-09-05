@@ -1,0 +1,16 @@
+{% extends 'admin/adminBase.html.twig' %}
+{% block treeview1 %}active{% endblock treeview1 %}
+{% block treeview2 %}active menu-open{% endblock treeview2 %}
+{% block tv_active2 %}active{% endblock tv_active2 %}
+{% block page_title %}Tableau de bord > Ajout categories {% endblock page_title %}
+{% block optional_title %}v 1.0{% endblock optional_title %}
+{% block content %}
+
+    <div class="row">
+        {{ dump(app) }}
+        <div class="col-md-12">
+        {{ form(form) }}
+        </div>
+
+    </div>
+{% endblock content %}

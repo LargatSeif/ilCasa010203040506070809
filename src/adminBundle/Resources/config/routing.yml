@@ -8,3 +8,14 @@ admin_homepage:
 admin_area:
     path:     /welcome
     defaults: { _controller: adminBundle:adminArea:index }
+cat_Manager:
+    path: /Categories/Manager
+    defaults: { _controller: adminBundle:categories:index }
+
+cat_add:
+    path: /Categories/Ajout
+    defaults: { _controller: adminBundle:categories:add }
+cat_create:
+    path: /addCat
+    methods: POST
+    defaults: { _controller: adminBundle:categories:createCat }

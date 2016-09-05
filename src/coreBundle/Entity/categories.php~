@@ -29,10 +29,7 @@ class categories
      */
     private $status;
 
-    public function __construct()
-    {
-        $this->dateAjout = new \DateTime();
-    }
+
     /**
      * Get id
      *
@@ -64,38 +61,5 @@ class categories
     public function getNom()
     {
         return $this->nom;
-    }
-    
-    /**
-     * Get dateAjout
-     *
-     * @return \DateTime 
-     */
-    public function getDateAjout()
-    {
-        return $this->dateAjout;
-    }
-
-    /**
-     * Set status
-     *
-     * @param integer $status
-     * @return categories
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return integer 
-     */
-    public function getStatus()
-    {
-        return $this->status;
     }
 }

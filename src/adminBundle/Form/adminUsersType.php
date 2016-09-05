@@ -26,6 +26,7 @@ class adminUsersType extends AbstractType
                             'Modérateur'                => 'Modérateur',
                             'Anonymous'                 => 'Anonymous',
                         ],
+                    
                     'attr'=>
                         [
                             'class'=>'form-control'

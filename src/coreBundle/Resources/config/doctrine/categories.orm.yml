@@ -13,4 +13,8 @@ coreBundle\Entity\categories:
             type: string
             length: '30'
             unique: true
+        dateAjout:
+            type: datetime
+        status:
+            type: integer
     lifecycleCallbacks: {  }
