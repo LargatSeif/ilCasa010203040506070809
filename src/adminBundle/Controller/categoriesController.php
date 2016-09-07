@@ -5,12 +5,16 @@ namespace adminBundle\Controller;
 use coreBundle\Entity\categories;
 use coreBundle\Form\categoriesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Intl\Tests\Data\Provider\Json;
+
 
 class categoriesController extends Controller
 {
     public function indexAction(){
-        return $this->render('@admin/adminArea/catManagement.html.twig',['data' => $this->getCategories() ]);
+
+        return $this->render('@admin/adminArea/catManagement.html.twig',['data' => $this->getCategories()]);
     }
     public function addAction(){
         $cat = new categories();
@@ -18,16 +22,15 @@ class categoriesController extends Controller
         return $this->render('@admin/adminArea/addCat.html.twig',['form'=>$form->createView()]);
     }
     public function createCatAction(Request $request){
-        $object  = new categories();
+        //$object  = new categories();
         $em = $this->getDoctrine()->getManager();
         $form = $this->createForm(new categoriesType());
         if($request->isMethod('POST')){
             $form->handleRequest($request);
-            if( $form->isValid() ){
-                $em->persist($form);
-                $em->flush();
-                $this->addFlash('addAction','success');
-            }
+            $object = $form->getData();
+            $em->persist($object);
+            $em->flush();
+            $this->addFlash('addAction','success');
         }
         return $this->redirectToRoute('cat_add');
     }
@@ -47,12 +50,42 @@ class categoriesController extends Controller
         );
         return $form;
     }
-    private function editCategorie(){
-        return $this->render('@admin/adminArea/addCat.html.twig');
+    
+    public function changeStatusAction($id){ 
+        $em  = $this->getDoctrine()->getManager();
+        $obj = $em->getRepository('coreBundle:categories')->findOneBy(['id'=>$id]);
+        ($obj->getStatus()== 0 )?$obj->setStatus('1'):$obj->setStatus('0');
+        $em->flush();
+        return $this->indexAction();
     }
-    private function deleteCategorie(){
-        return $this->render('@admin/adminArea/addCat.html.twig');
+    
+    public function createEditForm($id ,$em ,$action = '',$method = 'GET' ){
+        $obj = $em->getRepository('coreBundle:categories')->findOneBy(['id'=>$id]);
+        $form = $this->createForm(new categoriesType(),$obj,['action'=>$action,'method'=>$method]);
+        return ['form'=>$form  ,'obj'=>$obj];
     }
+
+    public function editCatAction($id){
+        return ($this->createEditForm($id,$this->getDoctrine()->getManager()) );
+    }
+    public function editAction(Request $request ,$id){
+        if($request->isMethod('POST')){
+            $res = $request->request;
+            $em  = $this->getDoctrine()->getManager();
+            $newObject = $em->getRepository('coreBundle:categories')->findOneBy(['id'=>$id]);
+            $newObject->setStatus($res->get('newStatus'));
+            $newObject->setNom($res->get('newName'));
+            $em->flush();
+            return new JsonResponse(['update'=>'success']);
+        }else{
+            return new JsonResponse(['update'=>'error']);
+        }
+
+    }
+
+    /*private function deleteCategorie(){
+        return $this->render('@admin/adminArea/addCat.html.twig');
+    }*/
 
     /**
      * @return array|\coreBundle\Entity\categories[]|null

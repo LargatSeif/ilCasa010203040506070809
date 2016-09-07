@@ -22,7 +22,7 @@ class DefaultController extends Controller
     {
         $categorie = $this->getDoctrine()->getRepository('coreBundle:categories');
 
-        $categories = $categorie->findAll();
+        $categories = $categorie->findBy(['status'=>'1']);
         return $categories;
         //$em = $this->getDoctrine()->getManager();
 

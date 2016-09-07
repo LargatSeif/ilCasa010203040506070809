@@ -19,3 +19,13 @@ cat_create:
     path: /addCat
     methods: POST
     defaults: { _controller: adminBundle:categories:createCat }
+cat_edit:
+    path: /Categorie/{id}/edit
+    defaults: { _controller: adminBundle:categories:editCat }
+cat_submit_edit:
+    path: /Categories/{id}/edit
+    defaults: { _controller: adminBundle:categories:edit }
+    methods: POST
+change_Cat:
+    path: /Categories/{id}/change
+    defaults: { _controller: adminBundle:categories:changeStatus}
