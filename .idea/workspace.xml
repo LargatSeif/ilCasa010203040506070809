@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="47e31e27-1e4b-478a-afe3-0568e5d9039f" name="Default" comment="Management of catégories done !">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminBundle/Controller/categoriesController.php" afterPath="$PROJECT_DIR$/src/adminBundle/Controller/categoriesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/adminBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/addCat.html.twig" afterPath="$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/addCat.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig" afterPath="$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php" />
     </list>
     <ignored path="ilCasa_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -342,6 +334,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2935421" />
     <property name="SearchEverywhereHistoryKey" value="typo&#9;null&#9;null" />
     <property name="last_opened_file_path" value="F:/Application (BusinessBook)" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -415,23 +408,31 @@
       <workItem from="1472807567370" duration="12258000" />
       <workItem from="1472823038159" duration="19293000" />
       <workItem from="1473093235378" duration="20073000" />
-      <workItem from="1473203727116" duration="15520000" />
+      <workItem from="1473203727116" duration="15646000" />
     </task>
+    <task id="LOCAL-00001" summary="Management of catégories done !">
+      <created>1473257400205</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1473257400205</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105638000" />
+    <option name="totallyTimeSpent" value="105764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1352" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22919819" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
