@@ -43,137 +43,60 @@
                     <ul class="right hide-on-med-and-down" id="myNav" style="background-color:#f7f7f7;width:100%;margin-top:-7px;padding-left:5%;" >
                         {% for item in data %}
                             <li>
-                                <a href="#"  id="{{ item.id -1 }}">{{ item.nom }}</a>
+                                <a href="#"  id="{{ item.id  }}">{{ item.nom }}</a>
                             </li>
                         {% endfor %}
-{#
-                        <li>
-                            <a href="#"  id="1">Aménagement intérieur</a>
-                        </li>
-                        <li>
-                            <a href="#"  id="2">Plomberie & chauffage</a>
-                        </li>
-                        <li>
-                            <a href="#"  id="3">Électricité & Domotique</a>
-                        </li>
-                        <li>
-                            <a href="#"  id="4">Nettoyage Pro</a>
-                        </li>
-                        <li>
-                            <a href="#"  id="5">Jardin & Extérieur</a>
-                        </li>
-                        <li>
-                            <a href="#"  id="6">Toute la maison</a>
-                        </li>#}
                     </ul>
-                    
-                    <div id="hoverMenu0" class="hoverMenu " >
+                    {% for item in data %}
+                    <div id="hoverMenu{{ item.id }}" class="hoverMenu " >
                         <div class="">
                             <div class="row " style="margin-bottom:-5px;padding:0 40px 0 40px">
-                                
+                                {% for sitem in item.sousCats %}
                                 <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
-                                    
+
                                     <div class="card horizontal myHcard" style="">
-                                        
                                           <div class="card-image">
-                                               <a href="#0" style="">
-                                                    <img src="{{ asset('materialize/assets/img/background2.jpg')}}" class="img" id="0" height="150" style="border-radius:0px;">
-                                                    <div id="0" class="overlay">
+                                               <a href="#{{ sitem.id }}" style="">
+                                                    <img src="{{ asset('materialize/assets/img/background2.jpg')}}"
+                                                         class="img" id="{{ sitem.id }}" height="150" style="border-radius:0px;">
+                                                    <div id="{{ sitem.id }}" class="overlay">
                                                         
                                                         <i class="material-icons center" 
                                                            style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
-                                                        <p style="text-align:center;font-size:24px;">Peinture interieur</p>
+                                                        <p style="text-align:center;font-size:24px;">{{ sitem.nom }}</p>
                                                     </div>
                                              </a> 
                                           </div>
                                           
                                     </div>
                                 </div>
-                                
-                                <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
-                                   
-                                        <div class="card horizontal myHcard" style="">
-                                           
-                                          <div class="card-image">
-                                               <a href="#0" >
-                                                    <img src="" class="img" id="1" height="150" style="border-radius:0px;">
-                                                   <div id="1" class="overlay">
-                                                        
-                                                        <i class="material-icons center" 
-                                                           style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
-                                                        <p style="text-align:center;font-size:24px;">Peinture exterieur</p>
-                                                    </div>
-                                             </a> 
-                                          </div>
-                                           
-                                        </div>
-                                    
-                                </div>
-                                
-                                <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
-                                   
-                                        <div class="card horizontal myHcard" style="">
-                                           
-                                          <div class="card-image">
-                                               <a href="#0" >
-                                                    <img src="{{ asset('materialize/assets/img/background2.jpg')}}" id="2" class="img" height="150" style="border-radius:0px;">
-                                                   <div id="2" class="overlay">
-                                                        
-                                                        <i class="material-icons center" 
-                                                           style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
-                                                        <p style="text-align:center;font-size:24px;">Peinture bois</p>
-                                                    </div>
-                                             </a> 
-                                          </div>
-                                           
-                                        </div>
-                                    
-                                </div>
-                                
-                                <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
-                                   
-                                        <div class="card horizontal myHcard" style="">
-                                           
-                                          <div class="card-image">
-                                               <a href="#0" >
-                                                    <img src="{{ asset('materialize/assets/img/background2.jpg')}}" id="3" class="img" height="150" style="border-radius:0px;">
-                                                   <div id="3" class="overlay" style=" ">
-                                                        
-                                                        <i class="material-icons center" 
-                                                           style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
-                                                        <p style="text-align:center;font-size:24px;">Peinture metal</p>
-                                                    </div>
-                                             </a> 
-                                          </div>
-                                           
-                                        </div>
-                                    
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                          
                     </div>
-                    
+                    {% endfor %}
+
                     <div id="hoverMenu1" class="hoverMenu">
                          <h2>1</h2>
                     </div>
-                    
+
                     <div id="hoverMenu2" class="hoverMenu">
                          <h2>2</h2>
                     </div>
-                    
+
                     <div id="hoverMenu3" class="hoverMenu">
                          <h2>3</h2>
                     </div>
-                    
+
                     <div id="hoverMenu4" class="hoverMenu">
                          <h2>4</h2>
                     </div>
-                    
+
                     <div id="hoverMenu5" class="hoverMenu">
                          <h2>5</h2>
                     </div>
-                    
+
                     <div id="hoverMenu6" class="hoverMenu">
                          <h2>6</h2>
                     </div>
