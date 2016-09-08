@@ -17,4 +17,9 @@ coreBundle\Entity\categories:
             type: datetime
         status:
             type: integer
+
+    oneToMany:
+        sousCats:
+            targetEntity: \coreBundle\Entity\sousCat
+            mappedBy: categorie
     lifecycleCallbacks: {  }

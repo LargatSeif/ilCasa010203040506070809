@@ -8,13 +8,10 @@ admin_homepage:
 admin_area:
     path:     /welcome
     defaults: { _controller: adminBundle:adminArea:index }
+
 cat_Manager:
     path: /Categories/Manager
     defaults: { _controller: adminBundle:categories:index }
-
-cat_add:
-    path: /Categories/Ajout
-    defaults: { _controller: adminBundle:categories:add }
 cat_create:
     path: /addCat
     methods: POST
@@ -29,3 +26,23 @@ cat_submit_edit:
 change_Cat:
     path: /Categories/{id}/change
     defaults: { _controller: adminBundle:categories:changeStatus}
+############################################################################
+sous_cat_manager:
+    path:     /sousCategories/Manager
+    defaults: { _controller: adminBundle:sousCat:index }
+sous_cat_create:
+    path: /addSousCat
+    methods: POST
+    defaults: { _controller: adminBundle:sousCat:createSousCat }
+sous_cat_edit:
+    path: /sousCategorie/{id}/edit
+    defaults: { _controller: adminBundle:sousCat:editSousCat }
+
+sous_submit_edit:
+    path: /sousCategories/{id}/edit
+    defaults: { _controller: adminBundle:sousCat:editSous }
+    methods: POST
+
+sous_change_Cat:
+    path: /sousCategories/{id}/change
+    defaults: { _controller: adminBundle:sousCat:changeStatus}

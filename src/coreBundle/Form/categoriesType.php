@@ -15,7 +15,7 @@ class categoriesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom')
+            ->add('nom','Symfony\Component\Form\Extension\Core\Type\TextType',['attr'=>['class'=>'form-control']])
              
             ->add(
                 'status',
@@ -23,10 +23,10 @@ class categoriesType extends AbstractType
                 [
                     'choices'=>
                         [
-                            '0'=>'desactiver',
-                            '1'=>'activer'
+                            '0'=>'Désactiver',
+                            '1'=>'Activer'
                         ],
-                    'expanded' => true
+                    'attr'=>['class'=>'form-control']
                 ]
             )
         ;

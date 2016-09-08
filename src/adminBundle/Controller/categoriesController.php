@@ -13,14 +13,14 @@ use Symfony\Component\Intl\Tests\Data\Provider\Json;
 class categoriesController extends Controller
 {
     public function indexAction(){
+        $obj = new categories();
 
-        return $this->render('@admin/adminArea/catManagement.html.twig',['data' => $this->getCategories()]);
+        return $this->render(
+            '@admin/adminArea/catManagement.html.twig',
+            ['data' => $this->getCategories(),'form'=>$this->createCatForm($obj)->createView()]
+        );
     }
-    public function addAction(){
-        $cat = new categories();
-        $form = $this->createCatForm($cat);
-        return $this->render('@admin/adminArea/addCat.html.twig',['form'=>$form->createView()]);
-    }
+
     public function createCatAction(Request $request){
         //$object  = new categories();
         $em = $this->getDoctrine()->getManager();
@@ -32,18 +32,19 @@ class categoriesController extends Controller
             $em->flush();
             $this->addFlash('addAction','success');
         }
-        return $this->redirectToRoute('cat_add');
+        return $this->indexAction();
     }
+
     private function createCatForm(categories $type){
         $form = $this->createForm(new categoriesType(),$type,['action'=> $this->generateUrl('cat_create'),'method'=>'POST']);
         $form->add(
             'submit',
             'submit',
             [
-                'label' => 'Valider',
+                'label' => "Valider l'ajout",
                 'attr'=>
                     [
-                        'class'=>'btn btn-primary btn-sm  pull-right ',
+                        'class'=>'btn btn-flat bg-maroon ',
                         'style'=>''
                     ]
             ]
@@ -68,6 +69,7 @@ class categoriesController extends Controller
     public function editCatAction($id){
         return ($this->createEditForm($id,$this->getDoctrine()->getManager()) );
     }
+
     public function editAction(Request $request ,$id){
         if($request->isMethod('POST')){
             $res = $request->request;
@@ -83,13 +85,6 @@ class categoriesController extends Controller
 
     }
 
-    /*private function deleteCategorie(){
-        return $this->render('@admin/adminArea/addCat.html.twig');
-    }*/
-
-    /**
-     * @return array|\coreBundle\Entity\categories[]|null
-     */
     private function getCategories(){
         $em = $this->getDoctrine()->getManager();
         $data = $em->getRepository('coreBundle:categories')->findAll();

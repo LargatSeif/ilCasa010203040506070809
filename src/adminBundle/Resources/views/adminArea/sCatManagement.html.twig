@@ -46,7 +46,7 @@
                             <th class="text-center">Nom</th>
                             <th class="text-center">Date d'ajout</th>
                             <th class="text-center">Status</th>
-                            <th class="text-center">nbrSousCat</th>
+                            <th class="text-center">Parent</th>
                             <th class="text-center"></th>
                         </tr>
                         {% for item in data|sortbyfield('status','desc') %}
@@ -76,7 +76,7 @@
                                 {%endif%}
                             </td>
                             <td class="text-center">
-                                <span>{{ item.sousCats.count }}</span>
+                                <span>{{ item.categorie.nom }}</span>
                             </td>
                             <td class="text-center">
                                 <div class="btn-group">
@@ -214,5 +214,39 @@
 
                     });
         });
+
+        /*$('#add').on('click',function (e) {
+            var ligne = $('#last'),id=99;
+            var newLigne = '<td class="text-center"><input title="check" type="checkbox" value="'+id+'"></td>'+
+            '<td class="text-center" id="nom'+id+'">' +
+                '<input type="text" class="form-control" value="" placeholder="Nom catégorie " id="nom" />' +
+            '</td>'+
+            '<td class="text-center">date</td>'+
+            '<td class="text-center" id="status'+id+'" >'+
+                '<input type="hidden" value="" id="status" required/>'+
+                '<select id="status'+id+'" class="sStatus form-control" title="status" style="" required>'+
+                    '<option disabled selected>Status</option><option value="0" >Désactivé</option><option value="1" >Activé</option>'+
+                '</select>'+
+            '</td>' +
+            '<td class="text-center">' +
+                '<div class="btn-group">'+
+                '<button type="button" class="btn bg-maroon btn-flat edit ajax" title="Ajax request" id="saveNew">'+
+                '<i class="fa fa-save"></i>'+
+                '<span> Ajout.</span>'+
+                '</button>'+
+                '</div>' +
+            '</td>';
+            ligne.html(newLigne);
+            $('#saveNew').on('click',function (e) {
+                e.preventDefault();
+                $.post(
+                        '/addCat',
+                        {
+
+                        }
+                );
+            })
+        })*/
+
     </script>
 {% endblock custom_JS %}

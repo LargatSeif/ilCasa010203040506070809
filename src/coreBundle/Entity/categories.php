@@ -2,6 +2,7 @@
 
 namespace coreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,9 +30,12 @@ class categories
      */
     private $status;
 
+    private $sousCats;
+    
     public function __construct()
     {
         $this->dateAjout = new \DateTime();
+        $this->sousCats = new ArrayCollection();
     }
     /**
      * Get id
@@ -97,5 +101,24 @@ class categories
     public function getStatus()
     {
         return $this->status;
+    }
+
+
+    public function addSousCat(sousCat $sousCats)
+    {
+        $this->sousCats[] = $sousCats;
+
+        return $this;
+    }
+
+    public function removeSousCat(sousCat $sousCats)
+    {
+        $this->sousCats->removeElement($sousCats);
+    }
+
+
+    public function getSousCats()
+    {
+        return $this->sousCats;
     }
 }

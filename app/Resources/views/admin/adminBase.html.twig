@@ -21,7 +21,7 @@
             page. However, you can choose any other skin. Make sure you
             apply the skin class to the body tag so the changes take effect.
       -->
-    <link rel="stylesheet" href="{{ asset('adminLTE/dist/css/skins/skin-yellow.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminLTE/dist/css/skins/skin-black.min.css') }}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9] -->
@@ -31,7 +31,7 @@
     <style>
     </style>
 </head>
-<body class="sidebar-mini skin-yellow  ">
+<body class="sidebar-mini skin-black  fixed">
 <div class="wrapper">
     <!-- Main Header -->
     <header class="main-header ">
@@ -237,27 +237,12 @@
                 <!-- Optionally, you can add icons to the links -->
                 <li><a href="#"><i class="fa fa-dashboard"></i> <span>Accueil</span></a></li>
                 <li class="treeview {% block treeview1 %}{% endblock treeview1 %}">
-                    <a href="#"><i class="fa fa-cog"></i> <span>Edition des catégories</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-chevron-down pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu {% block treeview2 %}{% endblock treeview2 %}" id="catMenu" >
-                        <li class="container {% block tv_active1 %}{% endblock tv_active1 %}"><a href="{{path('cat_Manager') }}"><i class="fa fa-gears"></i>Gérer</a></li>
-                        <li class="container {% block tv_active2 %}{% endblock tv_active2 %}"><a href="{{path('cat_add') }}"><i class="fa fa-plus"></i>Ajout</a></li>
-                    </ul>
+                    <a href="{{path('cat_Manager') }}" ><i class="fa fa-cogs"></i> <span>Manager des catégories</span></a>
                 </li>
                 <li class="treeview {% block treeview11 %}{% endblock treeview11 %}">
-                    <a href="#"><i class="fa fa-cog"></i> <span>Edition des Sous catégories</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-chevron-down pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu {% block treeview22 %}{% endblock treeview22 %}" id="catMenu" >
-                        <li class="container {% block tv_active11 %}{% endblock tv_active11 %}"><a href="{{path('cat_Manager') }}"><i class="fa fa-gears"></i>Gérer</a></li>
-                        <li class="container {% block tv_active22 %}{% endblock tv_active22 %}"><a href="{{path('cat_add') }}"><i class="fa fa-plus"></i>Ajout</a></li>
-                    </ul>
+                    <a href="{{path('sous_cat_manager') }}" ><i class="fa fa-cogs"></i> <span>Manager des S.catégories</span></a>
                 </li>
+
                 <li class=""><a href="#"><i class="fa fa-area-chart "></i> <span>Statistiques</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
