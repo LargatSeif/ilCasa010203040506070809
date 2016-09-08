@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="47e31e27-1e4b-478a-afe3-0568e5d9039f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin/adminBase.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/adminBase.html.twig" />
     </list>
     <ignored path="ilCasa_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,22 +41,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminBase.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adminBase.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/adminBase.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="249" column="80" selection-start-line="249" selection-start-column="80" selection-end-line="249" selection-end-column="80" />
+            <state relative-caret-position="319">
+              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
               <folding>
-                <element signature="e#2419#11159#0#Twig" expanded="false" />
+                <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catManagement.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="catManagement.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2968">
+            <state relative-caret-position="180">
               <caret line="106" column="10" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
               <folding />
             </state>
@@ -498,7 +499,7 @@
       <workItem from="1472823038159" duration="19293000" />
       <workItem from="1473093235378" duration="20073000" />
       <workItem from="1473203727116" duration="17075000" />
-      <workItem from="1473344571869" duration="102000" />
+      <workItem from="1473344571869" duration="1130000" />
     </task>
     <task id="LOCAL-00001" summary="Management of catégories done !">
       <created>1473257400205</created>
@@ -521,17 +522,24 @@
       <option name="project" value="LOCAL" />
       <updated>1473344671431</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="admin base some edition">
+      <created>1473344678101</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1473344678101</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107295000" />
+    <option name="totallyTimeSpent" value="108323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23298033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23298033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -718,6 +726,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1503">
           <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -819,6 +828,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1764">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -840,6 +850,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
           <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+          <folding>
+            <element signature="e#879#944#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -889,6 +902,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -948,21 +962,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/adminBase.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2968">
-          <caret line="106" column="10" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="319">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding>
+            <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/adminBase.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="249" column="80" selection-start-line="249" selection-start-column="80" selection-end-line="249" selection-end-column="80" />
-          <folding>
-            <element signature="e#2419#11159#0#Twig" expanded="false" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="106" column="10" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
