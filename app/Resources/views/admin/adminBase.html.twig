@@ -34,9 +34,9 @@
 <body class="skin-blue-light fixed sidebar-mini ">
 <div class="wrapper">
     <!-- Main Header -->
-    <header class="main-header">
+    <header class="main-header ">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="index2.html" class="logo bg-navy text-maroon">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini">
                 <img src="{{ asset('bundles/core/assets/icons/ilCasaIcon.png') }}"style="margin-top: 15%;" class="img-responsive" >
@@ -46,9 +46,9 @@
         </a>
         <!-- Header Navbar -->
     {% block header_navbar %}
-        <nav class="navbar navbar-static-top" role="navigation">
+        <nav class="navbar navbar-static-top bg-navy text-maroon" role="navigation">
             <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <a href="#" class="sidebar-toggle text-maroon" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
             <!-- Navbar Right Menu -->
@@ -206,7 +206,7 @@
     <aside class="main-sidebar">
 
         <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
+        <section class="sidebar ">
 
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
@@ -243,13 +243,22 @@
                         </span>
                     </a>
                     <ul class="treeview-menu {% block treeview2 %}{% endblock treeview2 %}" id="catMenu" >
-                        <li class="container {% block tv_active1 %}{% endblock tv_active1 %}"><a href="{{path('cat_Manager') }}"><i class="fa fa-gears"></i>Gérer les Cats.</a></li>
+                        <li class="container {% block tv_active1 %}{% endblock tv_active1 %}"><a href="{{path('cat_Manager') }}"><i class="fa fa-gears"></i>Gérer</a></li>
                         <li class="container {% block tv_active2 %}{% endblock tv_active2 %}"><a href="{{path('cat_add') }}"><i class="fa fa-plus"></i>Ajout</a></li>
-                        <li class="container {% block tv_active3 %}{% endblock tv_active3 %}"><a href="#"><i class="fa fa-edit"></i>Modification</a></li>
-                        <li class="container {% block tv_active4 %}{% endblock tv_active4 %}"><a href="#"><i class="fa fa-trash"></i>Suppression</a></li>
                     </ul>
                 </li>
-                <li class="active"><a href="#"><i class="fa fa-area-chart"></i>Statistiques<span></span></a></li>
+                <li class="treeview {% block treeview11 %}{% endblock treeview11 %}">
+                    <a href="#"><i class="fa fa-cog"></i> <span>Edition des Sous catégories</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-chevron-down pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu {% block treeview22 %}{% endblock treeview22 %}" id="catMenu" >
+                        <li class="container {% block tv_active11 %}{% endblock tv_active11 %}"><a href="{{path('cat_Manager') }}"><i class="fa fa-gears"></i>Gérer</a></li>
+                        <li class="container {% block tv_active22 %}{% endblock tv_active22 %}"><a href="{{path('cat_add') }}"><i class="fa fa-plus"></i>Ajout</a></li>
+                    </ul>
+                </li>
+                <li class=""><a href="#"><i class="fa fa-area-chart "></i> <span>Statistiques</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
@@ -257,7 +266,7 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height: 269px;">
+    <div class="content-wrapper bg-white" style="min-height: 269px;">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             {% block content_header %}
