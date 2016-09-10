@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +38,7 @@
     <!-- Main Header -->
     <header class="main-header ">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{ path('admin_area') }}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini">
                 <img src="{{ asset('bundles/core/assets/icons/ilCasaIcon.png') }}"style="margin-top: 15%;" class="img-responsive" >
@@ -235,14 +237,40 @@
             <ul class="sidebar-menu">
                 <li class="header">Menu</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li><a href="#"><i class="fa fa-dashboard"></i> <span>Accueil</span></a></li>
-                <li class="treeview {% block treeview1 %}{% endblock treeview1 %}">
-                    <a href="{{path('cat_Manager') }}" ><i class="fa fa-cogs"></i> <span>Manager des catégories</span></a>
+                <li><a href="{{ path('admin_area') }}"><i class="fa fa-dashboard"></i> <span>Accueil</span></a></li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-cogs"></i>
+                        <span>Manager</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="treeview {% block treeview1 %}{% endblock treeview1 %}">
+                            <a href="{{path('cat_Manager') }}" ><i class="fa fa-circle-o"></i> <span>Les catégories</span></a>
+                        </li>
+                        <li class="treeview {% block treeview11 %}{% endblock treeview11 %}">
+                            <a href="{{path('sous_cat_manager') }}" ><i class="fa fa-circle-o"></i> <span>Les Sous catégories</span></a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="treeview {% block treeview11 %}{% endblock treeview11 %}">
-                    <a href="{{path('sous_cat_manager') }}" ><i class="fa fa-cogs"></i> <span>Manager des S.catégories</span></a>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-users"></i>
+                        <span>Utilisateurs</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Listing</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Professionels</a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Visiteurs</a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Blacklistes</a></li>
+                    </ul>
                 </li>
-
+                <li class=""><a href="#"><i class="fa fa-files-o "></i> <span>Annonces</span></a></li>
                 <li class=""><a href="#"><i class="fa fa-area-chart "></i> <span>Statistiques</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->

@@ -1,3 +1,9 @@
 core_homepage:
     path:     /
     defaults: { _controller: coreBundle:Default:index }
+categories:
+    path: /{categorie}
+    defaults: { _controller: coreBundle:Default:categorie}
+sous_Categorie:
+    path: /{categorie}/{sousCategorie}
+    defaults: { _controller: coreBundle:Default:sousCategories}

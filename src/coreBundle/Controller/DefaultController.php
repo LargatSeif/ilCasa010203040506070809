@@ -3,6 +3,7 @@
 namespace coreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -18,6 +19,44 @@ class DefaultController extends Controller
 
     }
 
+    public function categorieAction($categorie){
+        $em = $this->getDoctrine()->getManager()->getRepository('coreBundle:categories');
+        $data = $em->findOneBy(['nom'=>$categorie]);
+        if( !is_null($data) && $data->getStatus() == 1 ){
+
+            return $this->render('coreBundle:categories:index.html.twig',
+                [
+                    'data'=>$this->getCategories(),
+                    'categorie'=> $data,
+                    'sc'=> $data->getSousCats()->toArray()
+                ]);
+        }
+        else{
+            $this->addFlash('','No result found');
+            return $this->redirectToRoute('core_homepage');
+
+        }
+
+        //return new Response($e);
+    }
+    
+    public function sousCategoriesAction($categorie , $sousCategorie){
+
+        $em = $this->getDoctrine()->getManager()->getRepository('coreBundle:categories');
+        $objC = $em->findOneBy(['nom'=>$categorie]);
+        $em = $this->getDoctrine()->getManager()->getRepository('coreBundle:sousCat');
+        $objSC = $em->findOneBy(['nom'=>$sousCategorie ,'categorie'=>$objC ]);
+
+        if( is_null($objC)){
+            return new Response('la categorie :<b>'.$categorie.'</b> n`existe pas !' );
+        }elseif(is_null($objSC)){
+            return new Response('la sous catégorie : <b>'.$sousCategorie.'</b> n`existe pas sous la catégorie : <b>'.$objC->getNom().'</b>!');
+        }else{
+            return new Response(var_dump($objSC) );
+        }
+    }
+
+    
     function getCategories()
     {
         $categorie = $this->getDoctrine()->getRepository('coreBundle:categories');

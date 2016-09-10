@@ -15,26 +15,6 @@ class DefaultController extends Controller
         $f = $this->createLoginForm();
         return $this->render('adminBundle:Default:index.html.twig',['form'=>$f->createView()]);
     }
-    /*
-    public function loginAction(Request $request){
-        $adminUser = new adminUsers();
-        $form = $this->get('form.factory')->create( new adminUsersType(),$adminUser );
-        if($request->isMethod('POST') ){
-
-            $form ->handleRequest($request);
-            $adminUser = $form->getData();
-            //var_dump($data);die;
-            $em = $this->getDoctrine()->getManager();
-            $loggedUser = $em->getRepository('adminBundle:adminUsers')->findOneBy(['username'=>$adminUser->getUsername(),'password'=>$adminUser->getPassword()]);
-            if(!empty($loggedUser) ){
-                return $this->redirectToRoute("admin_area");
-            }
-
-
-        }
-
-    }
-*/
     /**
      * CreateLoginForm function
      * @return \Symfony\Component\Form\Form|\Symfony\Component\Form\FormInterface

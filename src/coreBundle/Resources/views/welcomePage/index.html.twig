@@ -41,9 +41,9 @@
                 </div>
                 <div class="nav-wrapper container-fluid" style="">
                     <ul class="right hide-on-med-and-down" id="myNav" style="background-color:#f7f7f7;width:100%;margin-top:-7px;padding-left:5%;" >
-                        {% for item in data %}
+                        {% for item in data|sortbyfield('nom') %}
                             <li>
-                                <a href="#"  id="{{ item.id  }}">{{ item.nom }}</a>
+                                <a href="{{ path('categories',{'categorie': item.nom}) }}"  id="{{ item.id  }}">{{ item.nom }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -56,7 +56,7 @@
 
                                     <div class="card horizontal myHcard" style="">
                                           <div class="card-image">
-                                               <a href="#{{ sitem.id }}" style="">
+                                               <a href="{{ path('sous_Categorie',{'categorie':item.nom ,'sousCategorie': sitem.nom}) }}" style="">
                                                     <img src="{{ asset('materialize/assets/img/background2.jpg')}}"
                                                          class="img" id="{{ sitem.id }}" height="150" style="border-radius:0px;">
                                                     <div id="{{ sitem.id }}" class="overlay">
@@ -228,6 +228,7 @@
             </div>
         </div>
     {% endblock content %}
+
     {% block modals %}
         <div id="modal1" class="modal " style="height: %;">
             <div class="modal-content" >
