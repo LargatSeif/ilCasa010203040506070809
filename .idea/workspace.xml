@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e31e27-1e4b-478a-afe3-0568e5d9039f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/coreBundle/Resources/views/categories/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ilcasa (1).sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/adminBundle/Resources/views/sousCat/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/coreBundle/Entity/sousCat.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin/adminBase.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/adminBase.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/adminBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/adminBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig" afterPath="$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/coreBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreBundle/Resources/views/welcomePage/index.html.twig" afterPath="$PROJECT_DIR$/src/coreBundle/Resources/views/welcomePage/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreBundle/Resources/views/categories/index.html.twig" afterPath="$PROJECT_DIR$/src/coreBundle/Resources/views/categories/index.html.twig" />
     </list>
     <ignored path="ilCasa_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,37 +49,17 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coreBundle/Resources/views/categories/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
+            <state relative-caret-position="280">
+              <caret line="141" column="68" selection-start-line="141" selection-start-column="68" selection-end-line="141" selection-end-column="68" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
                 <element signature="e#31#5411#0#Twig" expanded="false" />
                 <element signature="e#5486#5520#0#HTML" expanded="true" />
-                <element signature="e#6000#6022#0#HTML" expanded="true" />
-                <element signature="e#6906#6970#0#HTML" expanded="true" />
-                <element signature="e#7116#7156#0#HTML" expanded="true" />
-                <element signature="e#7537#7575#0#HTML" expanded="true" />
+                <element signature="e#6028#6050#0#HTML" expanded="true" />
+                <element signature="e#6962#7026#0#HTML" expanded="true" />
+                <element signature="e#7172#7212#0#HTML" expanded="true" />
+                <element signature="e#7593#7631#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="categories.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coreBundle/Entity/categories.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2003">
-              <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="catManagement.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="51" column="60" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -102,8 +78,11 @@
         <entry file="file://$PROJECT_DIR$/src/adminBundle/Resources/views/sousCat/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="52" column="60" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
-              <folding />
+              <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
+              <folding>
+                <element signature="e#12#37#0#Twig" expanded="false" />
+                <marker date="1473529419288" expanded="true" signature="221:7193" ph="{% block content ...%}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,19 +90,19 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            <state relative-caret-position="235">
+              <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
               <folding>
                 <element signature="e#41#98#0#PHP" expanded="true" />
                 <element signature="e#196#412#0#PHP" expanded="false" />
                 <element signature="e#275#315#0#PHP" expanded="true" />
                 <element signature="e#527#550#1#PHP" expanded="true" />
-                <element signature="e#698#737#0#PHP" expanded="true" />
-                <element signature="e#1126#1880#0#PHP" expanded="false" />
-                <element signature="e#1258#1281#1#PHP" expanded="true" />
-                <element signature="e#1401#1421#1#PHP" expanded="true" />
-                <element signature="e#1891#2151#0#PHP" expanded="false" />
-                <element signature="e#1979#2002#1#PHP" expanded="true" />
+                <element signature="e#683#703#1#PHP" expanded="true" />
+                <element signature="e#859#898#0#PHP" expanded="true" />
+                <element signature="e#1391#1414#1#PHP" expanded="true" />
+                <element signature="e#1547#1567#1#PHP" expanded="true" />
+                <element signature="e#2049#2309#0#PHP" expanded="false" />
+                <element signature="e#2137#2160#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -228,10 +207,10 @@
         <option value="$PROJECT_DIR$/src/adminBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/coreBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/coreBundle/Resources/views/welcomePage/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/adminBundle/Resources/views/sousCat/index.html.twig" />
         <option value="$PROJECT_DIR$/src/adminBundle/Resources/views/adminArea/catManagement.html.twig" />
+        <option value="$PROJECT_DIR$/src/adminBundle/Resources/views/sousCat/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/coreBundle/Resources/views/categories/index.html.twig" />
       </list>
     </option>
@@ -763,7 +742,7 @@
       <workItem from="1473203727116" duration="17075000" />
       <workItem from="1473344571869" duration="13699000" />
       <workItem from="1473432417139" duration="599000" />
-      <workItem from="1473511346644" duration="13368000" />
+      <workItem from="1473511346644" duration="14767000" />
     </task>
     <task id="LOCAL-00001" summary="Management of catégories done !">
       <created>1473257400205</created>
@@ -814,11 +793,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473362482038</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add new sections in my plateforme ,&#10;* categories &amp; sub.Categories page&#10;* changes in the routing config &#10;in the dashboard to :&#10;* change the sideBar menu &#10;* add the manager of sub categories&#10;* some changes in the routing config">
+      <created>1473529107848</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1473529107848</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134859000" />
+    <option name="totallyTimeSpent" value="136258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -865,7 +851,8 @@
     <MESSAGE value="admin base some edition" />
     <MESSAGE value="just add the underCategories management !" />
     <MESSAGE value="Every thing is fixed ! new version is here !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Every thing is fixed ! new version is here !" />
+    <MESSAGE value="add new sections in my plateforme ,&#10;* categories &amp; sub.Categories page&#10;* changes in the routing config &#10;in the dashboard to :&#10;* change the sideBar menu &#10;* add the manager of sub categories&#10;* some changes in the routing config" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new sections in my plateforme ,&#10;* categories &amp; sub.Categories page&#10;* changes in the routing config &#10;in the dashboard to :&#10;* change the sideBar menu &#10;* add the manager of sub categories&#10;* some changes in the routing config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1217,33 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coreBundle/Entity/categories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2003">
-          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding>
-            <element signature="e#41#98#0#PHP" expanded="true" />
-            <element signature="e#196#412#0#PHP" expanded="false" />
-            <element signature="e#275#315#0#PHP" expanded="true" />
-            <element signature="e#527#550#1#PHP" expanded="true" />
-            <element signature="e#698#737#0#PHP" expanded="true" />
-            <element signature="e#1126#1880#0#PHP" expanded="false" />
-            <element signature="e#1258#1281#1#PHP" expanded="true" />
-            <element signature="e#1401#1421#1#PHP" expanded="true" />
-            <element signature="e#1891#2151#0#PHP" expanded="false" />
-            <element signature="e#1979#2002#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coreBundle/Resources/views/welcomePage/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1204">
@@ -1262,8 +1222,30 @@
     <entry file="file://$PROJECT_DIR$/src/adminBundle/Resources/views/sousCat/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="52" column="60" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
-          <folding />
+          <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
+          <folding>
+            <element signature="e#12#37#0#Twig" expanded="false" />
+            <marker date="1473529419288" expanded="true" signature="221:7193" ph="{% block content ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding>
+            <element signature="e#41#98#0#PHP" expanded="true" />
+            <element signature="e#196#412#0#PHP" expanded="false" />
+            <element signature="e#275#315#0#PHP" expanded="true" />
+            <element signature="e#527#550#1#PHP" expanded="true" />
+            <element signature="e#683#703#1#PHP" expanded="true" />
+            <element signature="e#859#898#0#PHP" expanded="true" />
+            <element signature="e#1391#1414#1#PHP" expanded="true" />
+            <element signature="e#1547#1567#1#PHP" expanded="true" />
+            <element signature="e#2049#2309#0#PHP" expanded="false" />
+            <element signature="e#2137#2160#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1275,18 +1257,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/coreBundle/Entity/categories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2003">
+          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/coreBundle/Resources/views/categories/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
+        <state relative-caret-position="280">
+          <caret line="141" column="68" selection-start-line="141" selection-start-column="68" selection-end-line="141" selection-end-column="68" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
             <element signature="e#31#5411#0#Twig" expanded="false" />
             <element signature="e#5486#5520#0#HTML" expanded="true" />
-            <element signature="e#6000#6022#0#HTML" expanded="true" />
-            <element signature="e#6906#6970#0#HTML" expanded="true" />
-            <element signature="e#7116#7156#0#HTML" expanded="true" />
-            <element signature="e#7537#7575#0#HTML" expanded="true" />
+            <element signature="e#6028#6050#0#HTML" expanded="true" />
+            <element signature="e#6962#7026#0#HTML" expanded="true" />
+            <element signature="e#7172#7212#0#HTML" expanded="true" />
+            <element signature="e#7593#7631#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

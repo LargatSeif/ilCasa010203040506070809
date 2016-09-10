@@ -1,0 +1,221 @@
+{% extends 'admin/adminBase.html.twig' %}
+{% block treeview11 %}active{% endblock treeview11 %}
+{% block page_title %}Tableau de bord {% endblock page_title %}
+{% block optional_title %}v 1.0{% endblock optional_title %}
+{% block content %}
+
+    <div class="row" style="height: auto">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Liste des catégories</h3>
+                    <button class="btn btn-flat bg-maroon text-center pull-right" data-toggle="modal" data-target="#add">
+                        <i class="fa fa-plus"></i> Ajouter une nouvelle Cat
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="gridSystemModalLabel">Remplissez le formulaire d'ajout .</h4>
+                                </div>
+                                <div class="modal-body">
+                                    {{ form_start(form) }}
+                                    {{ form_row(form.nom) }}
+                                    {{ form_row(form.status) }}
+                                    {{ form_row(form.categorie) }}
+
+                                </div>
+                                <div class="modal-footer">
+
+                                    {{ form_row(form.submit) }}
+                                    {{ form_end(form) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table table-hover table-bordered">
+                        <tbody>
+                        <tr class="" style="background:#001F3F;color:#FFF;">
+                            <th></th>
+                            <th class="text-center">Nom</th>
+                            <th class="text-center">Date d'ajout</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Parent</th>
+                            <th class="text-center">Icone</th>
+                            <th class="text-center"></th>
+                        </tr>
+
+                        {% for item in data|sortbyfield('categorie') %}
+
+                            <tr>
+                                <td class="text-center">
+                                    <input title="check" type="checkbox" value="{{ item.id }}">
+                                </td>
+                                <td class="text-center" id="nom{{ item.id }}">
+                                    <input type="hidden" class="nomEdit form-control" value="{{ item.nom }}" id="nom" /> <span class="spNom">{{ item.nom }}</span>
+                                </td>
+                                <td class="text-center">
+                                    {{ item.dateAjout|date('h:m:s d-m-Y ') }}
+                                </td>
+                                <td class="text-center" id="status{{ item.id }}"  >
+                                    <input type="hidden" value="{{ item.status }}" id="status" />
+                                    <select id="status{{ item.id }}" class="sStatus form-control" title="status" style="display: none">
+                                        <option value="0" {% if item.status == 0 %} selected {% endif %} >Désactiver</option>
+                                        <option value="1" {% if item.status == 1 %} selected {% endif %} >Activer</option>
+                                    </select>
+                                    {% if item.status == 1 %}
+                                        <span class="fa fa-check  text-green spStatus" id="labelIcon" ></span>
+                                        <span class="text-green hidden-xs text-center spStatus" id="label">Activé </span>
+                                    {% else %}
+                                        <span class="fa fa-times  text-red spStatus" id="labelIcon"></span>
+                                        <span class="text-red hidden-xs text-center spStatus" id="label" >Désactivé</span>
+                                    {%endif%}
+                                </td>
+                                <td class="text-center">
+                                    <span>{{ item.categorie.nom }}</span>
+                                </td>
+
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn bg-navy btn-flat edit ajax" title="Ajax request" id="{{ item.id }}">
+                                            <i class="fa fa-cogs"></i>
+                                        </button>
+                                        <button class="btn bg-maroon btn-flat" id="delete{{ item.id }}"  data-toggle="modal" data-target="#delete"  >
+                                            <i class="fa fa-trash"></i>
+                                            <input type="hidden" value="{{ item.id }}" id="toDelCat" />
+                                        </button>
+                                        <button type="button" style="display: none" class="btn bg-olive btn-flat save ajax" title="Ajax request" data-toggle="modal" data-target="#editModal" id="save{{ item.id }}">
+                                            <i class="fa fa-check"></i>
+                                            <span>Enreg.</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- /.box-body -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade " id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Taper votre mot de passe pour confirmer la suppression?</h4>
+                    <input type="password" class="form-control" title="password confirmation"/>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn bg-blue btn-flat" data-dismiss="modal" >Non</button>
+                    <button class="btn bg-red btn-flat" type="submit" >Valider la suppression</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+{% block custom_JS %}
+    <script>
+        function initChange(id){
+            $('.nomEdit').hide();
+            $('.sStatus').hide();
+            $('#status'+id+' .spStatus').show();
+            $('.spNom').show();
+            $('.spStatus').show();
+            $('#edit'+id).hide();
+            $('#delete'+id).hide();
+            $('#save'+id).show();
+        }
+
+        function inChange(id){
+            $('#save'+id).show();
+            $('#'+id).hide();
+            $('#nom'+id+' input').toggle().attr('type','text');
+            $('#status'+id+' select').show();
+            $('#status'+id+' .spStatus').hide();
+            $('#nom'+id+' span').toggle();
+
+        }
+
+        function afterChange(id ,newName ,newStatus){
+
+            var
+                    statusLabel = $('#status'+id+' #label') ,
+                    statusLabelIcon = $('#status'+id+' #labelIcon') ,
+                    spanNom = $('#nom'+id+' .spNom'),
+                    inputNom= $('#nom'+id+' input');
+
+            $('#status'+id+' select').hide();
+            $('#status'+id+' .spStatus').show();
+            spanNom.text(newName).show();
+            inputNom.attr('type','hidden');
+            if(newStatus == 1){
+                statusLabelIcon.removeClass('fa-times text-red').addClass('fa-check text-green');
+
+                statusLabel.removeClass('text-red').addClass('text-green');
+
+                statusLabel.text('Activé');
+
+            }else if(newStatus == 0){
+                statusLabelIcon.removeClass('fa-check').addClass('fa-times');
+                statusLabelIcon.removeClass('text-green').addClass('text-red');
+                statusLabel.removeClass('text-green').addClass('text-red');
+
+                statusLabel.text('Désactivé');
+            }
+
+            //document.getElementById('save'+id).removeAttribute('disabled');
+            $('#'+id).show();
+            $('#delete'+id).show();
+            $('#save'+id).hide();
+            //$('#'+id+' span').text('Modif.');
+            //$('#'+id+' i').removeClass('fa-check').addClass('fa-cogs');
+        }
+
+        $('.edit').on('click',function(e){
+            var
+                    id = $(this).attr('id'),
+                    nom = $('#nom'+id),
+                    status='';
+
+            e.preventDefault();
+            initChange(id);
+            /****************************************************/
+            inChange(id);
+
+            $('#nom'+id+' input').on('change',function(e){
+
+            });
+            $('#status'+id+' select').on('change',function () {
+                document.getElementById(id).removeAttribute('disabled');
+            });
+            $('#save'+id).on('click',function(e){
+                var
+                        newName = $('#nom'+id+' input').val(),
+                        newStatus = $('#status'+id+' select').val();
+                console.log(newStatus +'-->'+newName);
+                e.preventDefault();
+                $.post(id+'/edit',
+                        {newName: newName,newStatus: newStatus},
+                        function success(data){
+                            console.log(data);
+                            afterChange(id,newName,newStatus);
+                        }
+                );
+
+            });
+        });
+    </script>
+{% endblock custom_JS %}

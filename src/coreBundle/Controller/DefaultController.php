@@ -21,14 +21,16 @@ class DefaultController extends Controller
 
     public function categorieAction($categorie){
         $em = $this->getDoctrine()->getManager()->getRepository('coreBundle:categories');
-        $data = $em->findOneBy(['nom'=>$categorie]);
+        $data = $em->findOneBy(['nom'=>$categorie ,'status'=>1]);
+        $em = $this->getDoctrine()->getManager()->getRepository('coreBundle:sousCat');
+        $sc = $em->findBy(['categorie'=>$data,'status'=>1]);
         if( !is_null($data) && $data->getStatus() == 1 ){
 
             return $this->render('coreBundle:categories:index.html.twig',
                 [
                     'data'=>$this->getCategories(),
                     'categorie'=> $data,
-                    'sc'=> $data->getSousCats()->toArray()
+                    'sc'=> $sc
                 ]);
         }
         else{
@@ -43,9 +45,9 @@ class DefaultController extends Controller
     public function sousCategoriesAction($categorie , $sousCategorie){
 
         $em = $this->getDoctrine()->getManager()->getRepository('coreBundle:categories');
-        $objC = $em->findOneBy(['nom'=>$categorie]);
+        $objC = $em->findOneBy(['nom'=>$categorie ,'status'=>1]);
         $em = $this->getDoctrine()->getManager()->getRepository('coreBundle:sousCat');
-        $objSC = $em->findOneBy(['nom'=>$sousCategorie ,'categorie'=>$objC ]);
+        $objSC = $em->findOneBy(['nom'=>$sousCategorie ,'categorie'=>$objC ,'status'=>1]);
 
         if( is_null($objC)){
             return new Response('la categorie :<b>'.$categorie.'</b> n`existe pas !' );
