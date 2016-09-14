@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47e31e27-1e4b-478a-afe3-0568e5d9039f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/coreBundle/Resources/views/subCategories/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/coreBundle/Controller/DefaultController.php" />
     </list>
     <ignored path="ilCasa_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -521,7 +519,7 @@
       <workItem from="1473344571869" duration="13699000" />
       <workItem from="1473432417139" duration="599000" />
       <workItem from="1473511346644" duration="14801000" />
-      <workItem from="1473845406415" duration="4904000" />
+      <workItem from="1473845406415" duration="4924000" />
     </task>
     <task id="LOCAL-00001" summary="Management of catégories done !">
       <created>1473257400205</created>
@@ -586,11 +584,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473530385406</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add subcategories section">
+      <created>1473865855562</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1473865855562</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141196000" />
+    <option name="totallyTimeSpent" value="141216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="697" height="745" extended-state="0" />
@@ -639,7 +644,8 @@
     <MESSAGE value="Every thing is fixed ! new version is here !" />
     <MESSAGE value="add new sections in my plateforme ,&#10;* categories &amp; sub.Categories page&#10;* changes in the routing config &#10;in the dashboard to :&#10;* change the sideBar menu &#10;* add the manager of sub categories&#10;* some changes in the routing config" />
     <MESSAGE value="Add some dump data for test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some dump data for test" />
+    <MESSAGE value="add subcategories section" />
+    <option name="LAST_COMMIT_MESSAGE" value="add subcategories section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
