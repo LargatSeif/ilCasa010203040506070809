@@ -1,0 +1,233 @@
+{% extends 'base.html.twig' %}
+{%  block navbar %}
+    <div class="navbar-fixed white">
+        <nav role="navigation" class="white">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="brand-logo" style="margin-left:10px;">
+                    <img class="img-responsive" src="{{ asset('bundles/core/assets/img/ilCasa_Logo.png') }}" height="45px" style="margin-top:8px">
+                </a>
+                <ul class="center hide-on-med-and-down">
+                    <li style="margin-left:25%;width:50%;display:none;" id="searchBar">
+                        <label for="search" class="left "><i class="material-icons teal-text">search</i></label>
+                        <input id="search" type="text" name="Query"class="teal-text"
+                               placeholder="Trouvez une prestation ..."
+                               style="font-size: 14px;width:90%;text-align:center;">
+                    </li>
+                </ul>
+                <ul class="right hide-on-med-and-down" >
+                    <li>
+                        <a href="#" class="tooltipped" data-position="left" data-delay="50" data-tooltip="Inscrivez-vous !">
+                            <i class="material-icons teal-text accent-3 valign-wrapper" style="font-size:24px;"  >account_circle</i>
+                        </a></li>
+                    <li>
+                        <a href="#modal1" class="modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Contactez-nous!">
+                            <i class="material-icons teal-text accent-3" style="font-size:24px;" >email</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Besoin d'aide ?">
+                            <i class="material-icons teal-text accent-3" style="font-size:24px;" >info_outline</i>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="side-nav">
+                    <li>
+                        <a href="#">Navbar Link</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="nav-wrapper container-fluid" style="">
+                <ul class="right hide-on-med-and-down" id="myNav" style="background-color:#f7f7f7;width:100%;margin-top:-7px;padding-left:5%;" >
+                    {% for item in data %}
+                        <li>
+                            <a href="{{ path('categories',{'categorie': item.nom}) }}"  id="{{ item.id  }}">{{ item.nom }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% for item in data %}
+                    <div id="hoverMenu{{ item.id }}" class="hoverMenu " >
+                        <div class="">
+                            <div class="row " style="margin-bottom:-5px;padding:0 40px 0 40px">
+                                {% for sitem in item.sousCats %}
+                                    <div class="col s3 carT" style="padding:0px 0px 0px 0px;">
+
+                                        <div class="card horizontal myHcard" style="">
+                                            <div class="card-image">
+                                                <a href="{{ path('sous_Categorie',{'categorie':item.nom ,'sousCategorie': sitem.nom}) }}" style="">
+                                                    <img src="{{ asset('materialize/assets/img/background2.jpg')}}"
+                                                         class="img" id="{{ sitem.id }}" height="150" style="border-radius:0px;">
+                                                    <div id="{{ sitem.id }}" class="overlay">
+
+                                                        <i class="material-icons center"
+                                                           style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
+                                                        <p style="text-align:center;font-size:24px;">{{ sitem.nom }}</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+                <div id="hoverMenu1" class="hoverMenu">
+                    <h2>1</h2>
+                </div>
+
+                <div id="hoverMenu2" class="hoverMenu">
+                    <h2>2</h2>
+                </div>
+
+                <div id="hoverMenu3" class="hoverMenu">
+                    <h2>3</h2>
+                </div>
+
+                <div id="hoverMenu4" class="hoverMenu">
+                    <h2>4</h2>
+                </div>
+
+                <div id="hoverMenu5" class="hoverMenu">
+                    <h2>5</h2>
+                </div>
+
+                <div id="hoverMenu6" class="hoverMenu">
+                    <h2>6</h2>
+                </div>
+
+
+            </div>
+        </nav>
+
+    </div>
+{% endblock navbar %}
+{% block content %}
+    <div class="col s12 z-depth-1 nav3" style="margin-top:30px;" >
+        <div class="container">
+            <!--<div class="left stars-div" style="line-height:75px;font-size:18px;" id="stars" >
+                <i class="Small material-icons" id="1" s>star</i>
+                <i class="Small material-icons" id="2">star</i>
+                <i class="Small material-icons" id="3">star</i>
+                <i class="Small material-icons" id="4">star</i>
+                <i class="Small material-icons" id="5">star</i>
+            </div>
+            <a href="#" style="font-size:16px;margin-left:2%;">1250 avis clients</a>-->
+            <div class="left">
+                <i class="material-icons">account_balance</i> >ategorie > This
+            </div>
+            <a href="#" class="" style="font-size:16px;float:right" >
+                Comment ça marche <i class="material-icons" style="vertical-align: middle">live_help</i>
+            </a>
+
+        </div>
+    </div>
+    <div class="" >
+        <div class="section" >
+            <div class="col s12  center container">
+                <h3 ></h3>
+                <h4 class="left-align">Murs</h4>
+                <p class="left-align light" >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat.
+                    Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros.
+                    Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget,
+                </p>
+
+                <div class="the products container-fluid">
+                    <div class="row">
+                        <div class="col m4 s12" style=" ">
+                            <div class="card" style=" ">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator srvCard " src="{{ asset('bundles/core/assets/img/1.jpg') }}" height="200">
+                                </div>
+                                <div class="card-reveal"
+                                     style="color:#FFF; display: block;overflow:hidden;
+                                              transform: translateY(-100%); background: rgba(0, 0, 0, 0.498039);">
+                                    <h5>Service A</h5>
+
+                                    <p>
+                                        Lorem ipsum is just amazing !...etc
+                                    </p>
+                                    <div class="card-action">
+                                        <a href="#" class="btn waves-effect waves-light">Ceci est un lien</a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m4 s12" style=" ">
+                            <div class="card" style=" ">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator srvCard " src="{{ asset('bundles/core/assets/img/1.jpg') }}" height="200">
+                                </div>
+                                <div class="card-reveal"
+                                     style="color:#FFF; display: block;overflow:hidden;
+                                              transform: translateY(-100%); background: rgba(0, 0, 0, 0.498039);">
+                                    <h5>Service A</h5>
+
+                                    <p>
+                                        Lorem ipsum is just amazing !...etc
+                                    </p>
+                                    <div class="card-action">
+                                        <a href="#" class="btn waves-effect waves-light">Ceci est un lien</a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m4 s12" style=" ">
+                            <div class="card" style=" ">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator srvCard " src="{{ asset('bundles/core/assets/img/1.jpg') }}" height="200">
+                                </div>
+                                <div class="card-reveal"
+                                     style="color:#FFF; display: block;overflow:hidden;
+                                              transform: translateY(-100%); background: rgba(0, 0, 0, 0.498039);">
+                                    <h5>Service A</h5>
+
+                                    <p>
+                                        Lorem ipsum is just amazing !...etc
+                                    </p>
+                                    <div class="card-action">
+                                        <a href="#" class="btn waves-effect waves-light">Ceci est un lien</a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m4 s12" style=" ">
+                            <div class="card" style=" ">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator srvCard " src="{{ asset('bundles/core/assets/img/1.jpg') }}" height="200">
+                                </div>
+                                <div class="card-reveal"
+                                     style="color:#FFF; display: block;overflow:hidden;
+                                              transform: translateY(-100%); background: rgba(0, 0, 0, 0.498039);">
+                                    <h5>Service A</h5>
+
+                                    <p>
+                                        Lorem ipsum is just amazing !...etc
+                                    </p>
+                                    <div class="card-action">
+                                        <a href="#" class="btn waves-effect waves-light">Ceci est un lien</a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

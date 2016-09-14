@@ -54,7 +54,7 @@ class DefaultController extends Controller
         }elseif(is_null($objSC)){
             return new Response('la sous catégorie : <b>'.$sousCategorie.'</b> n`existe pas sous la catégorie : <b>'.$objC->getNom().'</b>!');
         }else{
-            return new Response(var_dump($objSC) );
+            return $this->render('@core/subCategories/index.html.twig',['data'=>$this->getCategories()]);
         }
     }
 
