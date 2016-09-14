@@ -9,6 +9,11 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
 services:
+    navigation_bar:
+        class: coreBundle\Services\navbar
+        arguments: ["@doctrine.orm.entity_manager"]
+
+
     twig.extension.sortbyfield:
         class: Snilius\Twig\SortByFieldExtension
         tags:

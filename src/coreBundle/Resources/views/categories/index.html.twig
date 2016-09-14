@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% block title %} {{ parent() }} {{ app.request.attributes.get('_route_params')['categorie']|replace('_',' ') }}{% endblock title %}
 {%  block navbar %}
     <div class="navbar-fixed white">
         <nav role="navigation" class="white">
@@ -43,7 +44,7 @@
                 <ul class="right hide-on-med-and-down" id="myNav" style="background-color:#f7f7f7;width:100%;margin-top:-7px;padding-left:5%;" >
                     {% for item in data %}
                         <li>
-                            <a href="{{ path('categories',{'categorie': item.nom}) }}"  id="{{ item.id  }}">{{ item.nom }}</a>
+                            <a href="{{ path('categories',{'categorie': item.nom|replace('_',' ')}) }}"  id="{{ item.id  }}">{{ item.nom|replace('_',' ') }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -63,7 +64,7 @@
 
                                                         <i class="material-icons center"
                                                            style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
-                                                        <p style="text-align:center;font-size:24px;">{{ sitem.nom }}</p>
+                                                        <p style="text-align:center;font-size:24px;">{{ sitem.nom|replace('_',' ') }}</p>
                                                     </div>
                                                 </a>
                                             </div>
@@ -115,7 +116,7 @@
 
                 <h1 id="myTitle" class="header white-text center-align hide-on-small-only hide-on-med-only " style="">
                     <img src="{{ asset('bundles/core/assets/icons/painting-paint-roller-.png') }}"><br>
-                    {{ categorie.nom }}<span id="Curs">|</span>
+                    {{ categorie.nom|replace('_',' ') }}<span id="Curs">|</span>
                 </h1>
                 <h4  class="header white-text waves-effects center-align hide-on-large-only text-wrap" style="margin-top:10%">
                     Vos travaux en toute simplicité.<span id="Curs">|</span>
@@ -129,7 +130,7 @@
                             <p class="center" style="">
 
                                 {% for item in sc| sortbyfield('nom') %}
-                                    <a href="{{ path('sous_Categorie',{'categorie': categorie.nom ,'sousCategorie':item.nom }) }}" class="categories" >{{ item.nom }}</a>
+                                    <a href="{{ path('sous_Categorie',{'categorie': categorie.nom ,'sousCategorie':item.nom}) }}" class="categories" >{{ item.nom|replace('_',' ') }}</a>
                                 {% endfor %}
                             </p>
                         </div>
@@ -147,7 +148,7 @@
     <div class="col s12 z-depth-1 nav3"  >
         <div class="container">
 
-            <div class="left stars-div" style="line-height:75px;font-size:18px;" id="stars" >
+            {#<div class="left stars-div" style="line-height:75px;font-size:18px;" id="stars" >
 
                 <i class="Small material-icons" id="1" s>star</i>
                 <i class="Small material-icons" id="2">star</i>
@@ -155,10 +156,25 @@
                 <i class="Small material-icons" id="4">star</i>
                 <i class="Small material-icons" id="5">star</i>
 
-            </div>
-            <a href="#" style="font-size:16px;margin-left:2%;">1250 avis clients</a>
+            </div>#}
+            <div class="left" style="font-size: 14px">
+                <a href="{{ path('core_homepage') }}" style="text-decoration: underline">Accueil</a> >
 
-            <a href="#Comment?" class="right"> Comment ça se fait ?</a>
+                {% for item in app.request.attributes.get('_route_params') %}
+                    {% if loop.last %}
+                        {{ item }}
+                    {% else %}
+                        <a href="{{ path('categories',{'categorie':item}) }}" style="text-decoration: underline"> {{ item }} </a> >
+                    {% endif %}
+                {% endfor %}
+
+                {#<a href="{{ path('categories',{'categorie':app.request.attributes.get('_route_params')['sousCategorie']}) }}">
+                {{ app.request.attributes.get('_route_params')['sousCategorie'] }}
+                </a>#}
+            </div>
+            <a href="#" class="" style="font-size:16px;float:right" >
+                Comment ça marche <i class="material-icons" style="vertical-align: middle">live_help</i>
+            </a>
 
         </div>
     </div>

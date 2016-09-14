@@ -43,7 +43,7 @@
                     <ul class="right hide-on-med-and-down" id="myNav" style="background-color:#f7f7f7;width:100%;margin-top:-7px;padding-left:5%;" >
                         {% for item in data|sortbyfield('nom') %}
                             <li>
-                                <a href="{{ path('categories',{'categorie': item.nom}) }}"  id="{{ item.id  }}">{{ item.nom }}</a>
+                                <a href="{{ path('categories',{'categorie': item.nom}) }}"  id="{{ item.id  }}">{{ item.nom|replace('_',' ') }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -63,7 +63,7 @@
                                                         
                                                         <i class="material-icons center" 
                                                            style=" text-align : center ;line-height:120px;font-size:40px;">flash_on</i>
-                                                        <p style="text-align:center;font-size:24px;">{{ sitem.nom }}</p>
+                                                        <p style="text-align:center;font-size:24px;">{{ sitem.nom|replace('_',' ') }}</p>
                                                     </div>
                                              </a> 
                                           </div>
